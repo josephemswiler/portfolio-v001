@@ -1,25 +1,72 @@
 import React, { Component } from 'react'
+import { Container, Row, Col, Button } from 'reactstrap'
 import ContainerLeft from '../components/containers/ContainerLeft'
-import ContainerCenter from '../components/containers/ContainerCenter'
 import ContainerRight from '../components/containers/ContainerRight'
+import AbsoluteSide from '../components/containers/AbsoluteSide'
 
-export default class home extends Component {
+export default class Home extends Component {
   constructor (props) {
     super(props)
 
-    this.state = {}
+    this.state = {
+      color: {
+        left: 'red',
+        center: 'grey',
+        right: 'green',
+        currentBodyHeight: null,
+        currentWindowHeight: null
+      }
+    }
   }
 
-  styles = () => ({
-    wrapper: {}
+  componentDidMount () {
+    window.addEventListener('resize', this.windowResize)
+    this.setState({
+      currentBodyHeight: window.innerHeight - 97,
+      currentWindowHeight: window.innerHeight
+    })
+  }
+
+  windowResize = () => {
+    this.setState({
+      currentBodyHeight: window.innerHeight - 97,
+      currentWindowHeight: window.innerHeight
+    })
+  }
+
+  style = () => ({
+    left: {
+
+    },
+    wrapper: {
+      height: this.state.currentBodyHeight,
+      maxWidth: 1220,
+      margin: 0
+    },
+    container: {
+      height: this.state.currentBodyHeight,
+      margin: 0,
+      padding: 0
+    }
   })
 
   render () {
     return (
-      <div style={this.styles().wrapper}>
-        <ContainerLeft />
-        <ContainerCenter />
-        <ContainerRight />
+      <div style={this.style().left}> 
+      <Container style={this.style().wrapper}  fluid={true} >
+        <Row>
+          <Col sm='12' sm='4' style={this.style().container}>
+            <ContainerLeft color={this.state.color.left} />
+          </Col>
+          <Col xs='12' sm='8' style={this.style().container}>
+            <ContainerRight color={this.state.color.right} />
+          </Col>
+        </Row>
+        {/* <Row>
+          <Col />
+          </Row> */}
+          <AbsoluteSide height={this.state.currentWindowHeight} />
+      </Container>
       </div>
     )
   }

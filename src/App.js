@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import 'bootswatch/dist/materia/bootstrap.css'
 import NavTop from './components/containers/NavTop'
 import Home from './pages/Home'
 import Project from './pages/Project'

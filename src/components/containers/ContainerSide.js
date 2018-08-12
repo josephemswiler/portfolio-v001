@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 
-export default class ContainerLeft extends Component {
+export default class ContainerSide extends Component {
   constructor (props) {
     super(props)
 
@@ -18,11 +18,9 @@ export default class ContainerLeft extends Component {
 
   render () {
     return (
-      <Container style={this.styles().container}>
+      <Container style={this.styles().container} fluid={true}>
         <Row>
-          <Col>
-          Full stack web & mobile developer
-          </Col>
+          <Col />
         </Row>
       </Container>
     )

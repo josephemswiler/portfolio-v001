@@ -5,7 +5,7 @@ import Found from './project-pages/Found'
 import Jello from './project-pages/Jello'
 import Spacebnb from './project-pages/Spacebnb'
 
-export default class project extends Component {
+export default class Project extends Component {
   constructor (props) {
     super(props)
     

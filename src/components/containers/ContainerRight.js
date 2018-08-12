@@ -8,13 +8,17 @@ export default class ContainerRight extends Component {
   }
 
   styles = () => ({
-    wrapper: {}
+    container: {
+      backgroundColor: this.props.color,
+      height: '100%',
+      width: '100%'
+    }
   })
 
   render () {
     return (
-      <div style={this.styles().wrapper}>
-        {this.props.children}
+      <div style={this.styles().container}>
+      Right
       </div>
     )
   }
