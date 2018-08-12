@@ -1,21 +1,28 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import NavTop from './components/containers/NavTop'
+import ContainerLeft from './components/containers/ContainerLeft'
+import ContainerCenter from './components/containers/ContainerCenter'
+import ContainerRight from './components/containers/ContainerRight'
 
-class App extends Component {
-  render() {
+
+
+export default class App extends Component {
+  constructor (props) {
+    super (props)
+    
+    this.state = {
+
+    }
+  }
+
+  render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <NavTop />
+        <ContainerLeft />
+        <ContainerCenter />
+        <ContainerRight />
       </div>
-    );
+    )
   }
 }
-
-export default App;
