@@ -1,10 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 export default class ContainerLeft extends Component {
-  render() {
+  constructor (props) {
+    super(props)
+
+    this.state = {}
+  }
+
+  styles = () => ({
+    wrapper: {}
+  })
+
+  render () {
     return (
-      <div className="containerleft">
-        { this.props.children }
+      <div style={this.styles().wrapper}>
+        {this.props.children}
       </div>
     )
   }

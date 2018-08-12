@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 export default class found extends Component {
-  render() {
+  render () {
     return (
-      <div className="found">
-        { this.props.children }
+      <div className='found'>
+        {this.props.children}
       </div>
     )
   }

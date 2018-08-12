@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 export default class dutch extends Component {
-  render() {
+  render () {
     return (
-      <div className="dutch">
-        { this.props.children }
+      <div className='dutch'>
+        {this.props.children}
       </div>
     )
   }

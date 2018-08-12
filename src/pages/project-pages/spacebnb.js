@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 export default class spacebnb extends Component {
-  render() {
+  render () {
     return (
-      <div className="spacebnb">
-        { this.props.children }
+      <div className='spacebnb'>
+        {this.props.children}
       </div>
     )
   }
