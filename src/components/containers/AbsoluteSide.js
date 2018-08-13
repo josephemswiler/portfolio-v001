@@ -1,13 +1,21 @@
 import React, { Component } from 'react'
+import { Tooltip } from 'reactstrap'
 
 export default class AbsoluteSide extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
-      height: this.props.height / 2 - 80
+      tooltipOpen: false
     }
   }
+
+  toggle = () => {
+    this.setState({
+      tooltipOpen: !this.state.tooltipOpen
+    })
+  }
+
   style = () => ({
     flex: {
       display: 'flex',

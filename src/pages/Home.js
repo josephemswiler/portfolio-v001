@@ -10,7 +10,6 @@ export default class Home extends Component {
 
     this.state = {
       color: {
-        left: 'red',
         center: 'grey',
         right: 'green',
         currentBodyHeight: null,
@@ -55,10 +54,10 @@ export default class Home extends Component {
       <div style={this.style().left}> 
       <Container style={this.style().wrapper}  fluid={true} >
         <Row>
-          <Col sm='12' sm='4' style={this.style().container}>
-            <ContainerLeft color={this.state.color.left} />
+          <Col xs='12' sm='6' md='5' lg='4' style={this.style().container}>
+            <ContainerLeft />
           </Col>
-          <Col xs='12' sm='8' style={this.style().container}>
+          <Col xs='12' md='7' lg='8' style={this.style().container}>
             <ContainerRight color={this.state.color.right} />
           </Col>
         </Row>
