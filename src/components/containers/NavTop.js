@@ -1,16 +1,8 @@
 import React, { Component } from 'react'
 import {
-  Collapse,
   Navbar,
-  NavbarToggler,
   NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
+ Button
 } from 'reactstrap'
 
 export default class Example extends React.Component {
@@ -22,13 +14,18 @@ export default class Example extends React.Component {
 
   style = () => ({
     navbar: {
-   
+      zIndex: 10
     },
     navbarBrand: {
       fontFamily: `'Nunito', sans-serif`,
       fontWeight: 900,
       fontSize: 18,
       color: '#707070'
+    },
+    button: {
+      borderRadius: 60,
+      paddingLeft: 20,
+      paddingRight: 20,
     }
   })
 
@@ -38,8 +35,7 @@ export default class Example extends React.Component {
       <div>
         <Navbar style={this.style().navbar} color='light' light>
           <NavbarBrand style={this.style().navbarBrand} href='/'>Joseph<br />Emswiler</NavbarBrand>
-
-
+          <Button style={this.style().button} className='d-block d-md-none'>Projects</Button>
         </Navbar>
       </div>
     )

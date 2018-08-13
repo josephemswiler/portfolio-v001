@@ -25,14 +25,16 @@ export default class ContainerLeft extends Component {
       <Container style={this.style().container}>
         <Row>
           <Col>
-          <h1 style={this.style().title}>Full stack web &<br /> mobile developer</h1>
+            <h1 style={this.style().title}>
+              Full stack web &<br /> mobile developer
+            </h1>
           </Col>
         </Row>
         <Row>
           <Col>
-          <ContainerLeftCarousel />
+            <ContainerLeftCarousel />
           </Col>
-          </Row>
+        </Row>
       </Container>
     )
   }

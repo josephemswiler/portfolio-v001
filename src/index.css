@@ -22,3 +22,9 @@ body {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+
+.btn-basic {
+  border-radius: 100;
+  letter-spacing: 10
+
+}

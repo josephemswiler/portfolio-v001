@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Container, Row, Col, Button } from 'reactstrap'
 
 export default class ContainerRight extends Component {
   constructor (props) {
@@ -17,9 +18,9 @@ export default class ContainerRight extends Component {
 
   render () {
     return (
-      <div style={this.styles().container}>
+      <Container style={this.styles().container}>
       Right
-      </div>
+      </Container>
     )
   }
 }

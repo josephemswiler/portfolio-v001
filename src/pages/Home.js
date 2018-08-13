@@ -54,7 +54,7 @@ export default class Home extends Component {
       <div style={this.style().left}> 
       <Container style={this.style().wrapper}  fluid={true} >
         <Row>
-          <Col xs='12' sm='6' md='5' lg='4' style={this.style().container}>
+          <Col xs='12' sm='8' md='5' lg='4' style={this.style().container}>
             <ContainerLeft />
           </Col>
           <Col xs='12' md='7' lg='8' style={this.style().container}>

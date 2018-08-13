@@ -10,26 +10,15 @@ export default class ContainerLeftCarousel extends Component {
     }
   }
 
-  style = () => ({
-    container: {
-      height: '100%',
-      width: '100%',
-      color: '#707070',
-      fontWeight: 900,
-      fontSize: 18,
-    },
-    column: {
-      padding: 0
-    },
-    factsTitle: {
-
-    },
-    factsListItem: {
-      padding: 0,
-      margin: 0,
-      listStyleType: 'none',
-    }
-  })
+  componentDidMount () {
+    this.interval = setInterval(() => {
+      if (this.state.idx >= this.facts.length - 1) {
+        this.setState({ idx: 0 })
+      } else {
+        this.setState({ idx: this.state.idx + 1 })
+      }
+    }, 3500)
+  }
 
   facts = [
     {
@@ -43,6 +32,37 @@ export default class ContainerLeftCarousel extends Component {
         'Adobe Illustrator',
         'Adobe Photoshop'
       ]
+    },
+    {
+      title: 'Hobbies include:',
+      listItems: [
+        'Running',
+        'Cooking',
+        'WebVR',
+        'More developing',
+        'More designing '
+      ]
+    },
+    {
+      title: 'Favorite Restaurants include:',
+      listItems: [
+        'Sway',
+        'Terry Black’s BBQ',
+        'Torchy’s Tacos',
+        'Pacha Organic Café',
+        'Pinthouse Pizza',
+        'Ramen Tatsu-Ya'
+      ]
+    },
+    {
+      title: 'Top 5 breweries:',
+      listItems: [
+        'Pinthouse Pizza (South) 🙃',
+        'Jester King',
+        'St. Elmo',
+        'Oddwood',
+        'Zilker'
+      ]
     }
   ]
 
@@ -52,11 +72,32 @@ export default class ContainerLeftCarousel extends Component {
       <div>
         <span style={this.style().factsTitle}>{this.facts[idx].title}</span>
         <ul style={this.style().factsListItem}>
-          {this.facts[idx].listItems.map(item => <li>{item}</li>)}
+          {this.facts[idx].listItems.map((item, idx) => (
+            <li key={idx}>{item}</li>
+          ))}
         </ul>
       </div>
     )
-}
+  }
+
+  style = () => ({
+    container: {
+      height: '100%',
+      width: '100%',
+      color: '#707070',
+      fontWeight: 900,
+      fontSize: 18
+    },
+    column: {
+      padding: 0
+    },
+    factsTitle: {},
+    factsListItem: {
+      padding: 0,
+      margin: 0,
+      listStyleType: 'none'
+    }
+  })
 
   render () {
     return (

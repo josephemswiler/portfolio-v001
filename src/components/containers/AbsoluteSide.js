@@ -68,6 +68,7 @@ export default class AbsoluteSide extends Component {
                 r='20'
                 fill='none'
                 style={this.style().line}
+                key={item.key}
                 />
               : <line
                 x1='25'
@@ -84,7 +85,7 @@ export default class AbsoluteSide extends Component {
 
   render () {
     return (
-      <div style={this.style().flex}>
+      <div style={this.style().flex} className='d-none d-md-block'>
         <div style={this.style().absolute}>
           {this.makeLines(this.props.height)}
         </div>
