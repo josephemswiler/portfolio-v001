@@ -29,7 +29,7 @@ export default class ContainerRightProjects extends Component {
       display: this.props.project === 'Found' ? 'block' : 'none',
       position: 'absolute',
       zIndex: -1,
-      bottom: -97
+      top: -97
     },
     leaf: {
       display: this.props.project === 'Jello' ? 'block' : 'none',

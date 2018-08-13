@@ -12,7 +12,7 @@ export default class NavTop extends Component {
 
   style = () => ({
     navbar: {
-      height: 97
+      height: 97,
     },
     navbarBrand: {
       fontSize: 18,
