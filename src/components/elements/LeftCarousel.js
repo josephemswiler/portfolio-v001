@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 
-export default class ContainerLeftCarousel extends Component {
+export default class LeftCarousel extends Component {
   constructor (props) {
     super(props)
 

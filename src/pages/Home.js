@@ -10,8 +10,6 @@ export default class Home extends Component {
 
     this.state = {
       color: {
-        center: 'grey',
-        right: 'green',
         currentBodyHeight: null,
         currentWindowHeight: null
       }
@@ -34,13 +32,12 @@ export default class Home extends Component {
   }
 
   style = () => ({
-    left: {
 
-    },
     wrapper: {
       height: this.state.currentBodyHeight,
       maxWidth: 1220,
-      margin: 0
+      margin: 0,
+      paddingTop: 97
     },
     container: {
       height: this.state.currentBodyHeight,
@@ -51,22 +48,20 @@ export default class Home extends Component {
 
   render () {
     return (
-      <div style={this.style().left}> 
       <Container style={this.style().wrapper}  fluid={true} >
         <Row>
           <Col xs='12' sm='8' md='5' lg='4' style={this.style().container}>
             <ContainerLeft />
           </Col>
-          <Col xs='12' md='7' lg='8' style={this.style().container}>
-            <ContainerRight color={this.state.color.right} />
+          <Col xs='12' md='7' lg='8' className='d-none d-md-block' style={this.style().container}>
+            <ContainerRight />
           </Col>
         </Row>
         {/* <Row>
           <Col />
           </Row> */}
-          <AbsoluteSide height={this.state.currentWindowHeight} />
+          {/* <AbsoluteSide height={this.state.currentWindowHeight} /> */}
       </Container>
-      </div>
     )
   }
 }

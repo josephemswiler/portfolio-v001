@@ -7,24 +7,8 @@ body {
   font-weight: 400;
 }
 
-.text-light {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 300;
-}
-
-.text-bold {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 900;
-}
-
 .navbar {
   border: none;
   -webkit-box-shadow: none;
   box-shadow: none;
-}
-
-.btn-basic {
-  border-radius: 100;
-  letter-spacing: 10
-
 }

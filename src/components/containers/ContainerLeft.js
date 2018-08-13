@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
-import ContainerLeftCarousel from './ContainerLeftCarousel'
+import LeftCarousel from '../elements/LeftCarousel'
 
 export default class ContainerLeft extends Component {
   constructor (props) {
@@ -32,7 +32,7 @@ export default class ContainerLeft extends Component {
         </Row>
         <Row>
           <Col>
-            <ContainerLeftCarousel />
+            <LeftCarousel />
           </Col>
         </Row>
       </Container>
