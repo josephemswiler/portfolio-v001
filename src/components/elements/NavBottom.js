@@ -75,7 +75,8 @@ export default class NavBottom extends Component {
 
   style = () => ({
     container: {
-      position: 'absolute',
+      position: 'fixed',
+      zIndex: 2,
       right: 0,
       marginRight: 20
     },

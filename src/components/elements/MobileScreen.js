@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Found from '../../assets/images/found-mobile-home.svg'
-import Spacebnb from '../../assets/images/spacebnb-mobile-home.svg'
-import Jello from '../../assets/images/jello-mobile-home.svg'
+import Found from '../../assets/images/mobile-found.svg'
+import Spacebnb from '../../assets/images/mobile-spacebnb.svg'
+import Jello from '../../assets/images/mobile-jello.svg'
 
 export default class MobileScreen extends Component {
   constructor (props) {
@@ -59,7 +59,7 @@ export default class MobileScreen extends Component {
   style = () => ({
     screenSVG: {
       position: 'absolute',
-      zIndex: -1,
+      zIndex: 0,
       top: 6,
       left: 15,
     }

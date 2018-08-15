@@ -56,12 +56,24 @@ export default class ContainerRight extends Component {
         this.setState({ idx: this.state.idx + 1 })
       }
     }, 3500)
+    if (this.state.projects[this.state.idx] === 'Found') {
+      this.props.updateBackground('Found')
+    } else {}
   }
 
   style = () => ({
     container: {
-      backgroundColor: this.props.color,
+      // backgroundImage: `url(${Pattern})`,
       height: '100%',
+      width: '100%',
+      zIndex: -100,
+      top: -97,
+    },
+    pattern: {
+      // display: this.props.project === 'Found' ? 'block' : 'none',
+      position: 'absolute',
+      zIndex: -1,
+      top: -97,
       width: '100%'
     }
   })

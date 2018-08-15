@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import 'bootswatch/dist/materia/bootstrap.css'
 import NavTop from './components/elements/NavTop'
-import NavBottom from './components/elements/NavBottom'
 import Home from './pages/Home'
 import Project from './pages/Project'
 
@@ -23,7 +22,6 @@ export default class App extends Component {
             <Route exact path='/project' component={Project} />
             <Route exact path='/project/:id' component={Project} />
           </Switch>
-          <NavBottom />
         </div>
       </Router>
     )

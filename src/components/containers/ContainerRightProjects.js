@@ -23,26 +23,23 @@ export default class ContainerRightProjects extends Component {
       width: '100%',
       margin: 0,
       padding: 0,
-      paddingRight: 50
+      paddingRight: 50,
     },
-    pattern: {
-      display: this.props.project === 'Found' ? 'block' : 'none',
-      position: 'absolute',
-      zIndex: -1,
-      top: -97
+    screen: {
+      zIndex: 10
     },
     leaf: {
       display: this.props.project === 'Jello' ? 'block' : 'none',
       position: 'absolute',
       height: 500,
-      zIndex: 2,
+      zIndex: 11,
       right: 240,
       top: -340,
       transform: 'rotate(-120deg)'
     },
     column: {
       flexDirection: 'row',
-
+      zIndex: 10
     },
     badge: {
       position: 'absolute',
@@ -55,15 +52,14 @@ export default class ContainerRightProjects extends Component {
   render () {
     return (
       <Container style={this.style().container} >
-      <img style={this.style().pattern} src={Pattern} alt='a crazy pattern' />
       <img style={this.style().leaf} src={Leaf} alt='a tropical leaf' />
         <Row>
           <Col md='8' lg='9' style={this.style().column}>
-            <img src={Desktop} alt='desktop computer image' />
+            <img style={this.style().screen} src={Desktop} alt='desktop computer image' />
             <DesktopScreen project={this.props.project} />
           </Col>
           <Col md='4' lg='3'>
-          <img src={Mobile} alt='mobile phone image' />
+          <img style={this.style().screen} src={Mobile} alt='mobile phone image' />
           <img style={this.style().badge} src={Badge} alt='first place badge' />
           <MobileScreen project={this.props.project} />
           </Col>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Found from '../../assets/images/found-desktop-home.svg'
-import Spacebnb from '../../assets/images/spacebnb-desktop-home.svg'
-import Jello from '../../assets/images/jello-desktop-home.svg'
+import Found from '../../assets/images/desktop-found.svg'
+import Spacebnb from '../../assets/images/desktop-spacebnb.svg'
+import Jello from '../../assets/images/desktop-jello.svg'
 
 export default class DesktopScreen extends Component {
   constructor (props) {
@@ -57,16 +57,9 @@ export default class DesktopScreen extends Component {
   }
 
   style = () => ({
-    screen: {
-      position: 'absolute',
-      zIndex: -1,
-      top: this.state.top,
-      left: this.state.left,
-      height: this.state.height
-    },
     screenSVG: {
       position: 'absolute',
-      zIndex: -1,
+      zIndex: 0,
       top: 9,
       left: 15
     }
