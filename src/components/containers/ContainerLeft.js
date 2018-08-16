@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import LeftCarousel from '../elements/LeftCarousel'
+import LeftTechnology from '../elements/LeftTechnology'
 import '../../index.css'
 
 export default class ContainerLeft extends Component {
@@ -20,8 +21,6 @@ export default class ContainerLeft extends Component {
     }
   })
 
-  
-
   render () {
     let textColor = this.props.project === 'Spacebnb' ? 'fade-light' : 'fade-dark'
     return (
@@ -35,7 +34,8 @@ export default class ContainerLeft extends Component {
         </Row>
         <Row>
           <Col>
-            <LeftCarousel project={this.props.project} />
+            {/* <LeftCarousel project={this.props.project} /> */}
+            <LeftTechnology project={this.props.project} />
           </Col>
         </Row>
       </Container>

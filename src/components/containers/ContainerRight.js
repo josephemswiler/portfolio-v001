@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Container, Row, Col, Button } from 'reactstrap'
 import RightProjects from '../elements/RightProjects'
 import RightButtons from '../elements/RightButtons'
-import RightTechnology from '../elements/RightTechnology'
+// import RightTechnology from '../elements/RightTechnology'
 
 export default class ContainerRight extends Component {
   constructor (props) {
@@ -11,59 +11,9 @@ export default class ContainerRight extends Component {
     this.state = {
       idx: 0,
       projects: [
-        {
-          name: 'Jello',
-          tech: [
-            'html-5',
-            'css-3',
-            'materialize-css',
-            'javascript',
-            'jquery',
-            'jquery-ui',
-            'node-js',
-            'mysql',
-            'sequel-pro',
-            'seuqelize',
-            'express-js',
-            'handlebars-js',
-            'adobe-xd'
-          ]
-        },
-        {
-          name: 'Spacebnb',
-          tech: [
-            'html-5',
-            'css-3',
-            'reactstrap',
-            'javascript',
-            'next-js',
-            'three-js',
-            'node-js',
-            'mongo-db',
-            'robo-3t',
-            'mongoose',
-            'express-js',
-            'adobe-xd'
-          ]
-        },
-        {
-          name: 'Found',
-          tech: [
-            'html-5',
-            'css-3',
-            'bootstrap',
-            'javascript',
-            'jquery',
-            'node-js',
-            'mongo-db',
-            'robo-3t',
-            'mongoose-js',
-            'express-js',
-            'handlebars-js',
-            'mvc-framework',
-            'adobe-xd'
-          ]
-        },
+        'Jello',
+        'Spacebnb',
+        'Found'
       ]
     }
   }
@@ -75,10 +25,10 @@ export default class ContainerRight extends Component {
       case 'next':
         if (currentIdx === this.state.projects.length - 1) {
           this.setState({ idx: 0 })
-          this.props.updateBackground(this.state.projects[0].name)
+          this.props.updateBackground(this.state.projects[0])
         } else {
           this.setState({ idx: currentIdx + 1 })
-          this.props.updateBackground(this.state.projects[currentIdx + 1].name)
+          this.props.updateBackground(this.state.projects[currentIdx + 1])
         }
         this.resetInterval()
         break
@@ -90,7 +40,7 @@ export default class ContainerRight extends Component {
           )
         } else {
           this.setState({ idx: currentIdx - 1 })
-          this.props.updateBackground(this.state.projects[currentIdx - 1].name)
+          this.props.updateBackground(this.state.projects[currentIdx - 1])
         }
         this.resetInterval()
         break
@@ -104,7 +54,7 @@ export default class ContainerRight extends Component {
   }
 
   componentDidMount () {
-    this.props.updateBackground(this.state.projects[this.state.idx].name)
+    this.props.updateBackground(this.state.projects[this.state.idx])
     this.imageInterval()
   }
 
@@ -115,7 +65,7 @@ export default class ContainerRight extends Component {
       } else {
         this.setState({ idx: this.state.idx + 1 })
       }
-      this.props.updateBackground(this.state.projects[this.state.idx].name)
+      this.props.updateBackground(this.state.projects[this.state.idx])
     }, 3500)
   }
 
@@ -140,13 +90,13 @@ export default class ContainerRight extends Component {
         <Row>
           <Col>
             <RightProjects
-              project={this.state.projects[this.state.idx].name}
+              project={this.state.projects[this.state.idx]}
             />
+            {/* <RightTechnology technology={this.state.projects[this.state.idx].tech} /> */}
             <RightButtons
-              project={this.state.projects[this.state.idx].name}
+              project={this.state.projects[this.state.idx]}
               navProjects={this.navProjects}
             />
-            <RightTechnology technology={this.state.projects[this.state.idx].tech} />
           </Col>
         </Row>
       </Container>

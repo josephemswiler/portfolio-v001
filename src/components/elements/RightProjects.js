@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Row, Col, Button } from 'reactstrap'
+import { Container, Row, Col } from 'reactstrap'
 import Desktop from '../../assets/images/screen-imac.svg'
 import Mobile from '../../assets/images/screen-iphone.svg'
 import Badge from '../../assets/images/first-place-badge.svg'

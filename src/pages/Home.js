@@ -7,6 +7,7 @@ import Pattern from '../assets/images/background-found.svg'
 import NavBottom from '../components/elements/NavBottom'
 import Leaf from '../assets/images/tropical-leaf-detail.svg'
 import webVR from '../three/index'
+import '../index.css'
 
 export default class Home extends Component {
   constructor (props) {
@@ -14,16 +15,17 @@ export default class Home extends Component {
 
     this.state = {
         currentWindowHeight: window.innerHeight,
-        project: null
+        project: null,
+        leafHeight: 500
     }
   }
 
   componentDidMount () {
     webVR(this.webVR)
     window.addEventListener('resize', this.windowResize)
-    this.setState({
-      currentWindowHeight: window.innerHeight
-    })
+    // this.setState({
+    //   currentWindowHeight: window.innerHeight
+    // })
   }
 
   windowResize = () => {
@@ -67,7 +69,7 @@ export default class Home extends Component {
     leaf: {
       display: this.state.project === 'Jello' ? 'block' : 'none',
       position: 'absolute',
-      height: 500,
+      height: this.state.leafHeight,
       zIndex: 11,
       right: 240,
       top: -240,
@@ -122,7 +124,7 @@ export default class Home extends Component {
             className='d-none d-md-block'
             style={this.style().containerRightWrapper}
           >
-          <img style={this.style().leaf} src={Leaf} alt='a tropical leaf' />
+          <img className='leaf' style={this.style().leaf} src={Leaf} alt='a tropical leaf' />
             <Container style={this.style().containerRight}>
               <ContainerRight updateBackground={this.updateBackground}/>
             </Container>
