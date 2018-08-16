@@ -29,15 +29,18 @@ export default class ContainerRightButtons extends Component {
       paddingLeft: 50,
       paddingRight: 50,
       fontWeight: 900,
-      color: '#707070',
+      color: this.props.project === 'Spacebnb' ? '#fff' : '#707070',
+      marginTop: 8,
       marginLeft: 20,
-      marginRight: 20
+      marginRight: 20,
+      backgroundColor: this.props.project === 'Spacebnb' ? '#222' : '#fff',
     },
     buttonRound: {
       width: 50,
       height: 50,
-      color: '#707070',
-      fontWeight: 900
+      color: this.props.project === 'Spacebnb' ? '#fff' : '#707070',
+      fontWeight: 900,
+      backgroundColor: this.props.project === 'Spacebnb' ? '#222' : '#fff',
     },
     angleIconLeft: {
       fontSize: 32,

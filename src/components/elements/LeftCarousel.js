@@ -84,7 +84,7 @@ export default class LeftCarousel extends Component {
     container: {
       height: '100%',
       width: '100%',
-      color: '#707070',
+      color: this.props.project === 'Spacebnb' ? '#fff' : '#707070',
       fontWeight: 900,
       fontSize: 18
     },

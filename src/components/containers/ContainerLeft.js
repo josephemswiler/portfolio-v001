@@ -15,7 +15,7 @@ export default class ContainerLeft extends Component {
       width: '100%'
     },
     title: {
-      color: '#707070',
+      color: this.props.project === 'Spacebnb' ? '#fff' : '#707070',
       fontWeight: 900
     }
   })
@@ -32,7 +32,7 @@ export default class ContainerLeft extends Component {
         </Row>
         <Row>
           <Col>
-            <LeftCarousel />
+            <LeftCarousel project={this.props.project} />
           </Col>
         </Row>
       </Container>

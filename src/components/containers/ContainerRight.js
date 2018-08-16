@@ -20,16 +20,20 @@ export default class ContainerRight extends Component {
       case 'next':
         if (currentIdx === this.state.projects.length - 1) {
           this.setState({ idx: 0 })
+          this.props.updateBackground(this.state.projects[0])
         } else {
           this.setState({ idx: currentIdx + 1 })
+          this.props.updateBackground(this.state.projects[currentIdx + 1])
         }
         this.resetInterval()
         break
       case 'back':
         if (currentIdx === 0) {
           this.setState({ idx: this.state.projects.length - 1 })
+          this.props.updateBackground(this.state.projects[this.state.projects.length - 1])
         } else {
           this.setState({ idx: currentIdx - 1 })
+          this.props.updateBackground(this.state.projects[currentIdx - 1])
         }
         this.resetInterval()
         break
@@ -39,38 +43,33 @@ export default class ContainerRight extends Component {
 
   resetInterval = () => {
     clearInterval(this.interval)
-    this.interval = setInterval(() => {
-      if (this.state.idx >= this.state.projects.length - 1) {
-        this.setState({ idx: 0 })
-      } else {
-        this.setState({ idx: this.state.idx + 1 })
-      }
-    }, 3500)
+    this.imageInterval()
   }
 
   componentDidMount () {
+    this.props.updateBackground(this.state.projects[this.state.idx])
+    this.imageInterval()
+  }
+
+  imageInterval = () => {
     this.interval = setInterval(() => {
       if (this.state.idx >= this.state.projects.length - 1) {
         this.setState({ idx: 0 })
       } else {
         this.setState({ idx: this.state.idx + 1 })
       }
+      this.props.updateBackground(this.state.projects[this.state.idx])
     }, 3500)
-    if (this.state.projects[this.state.idx] === 'Found') {
-      this.props.updateBackground('Found')
-    } else {}
   }
 
   style = () => ({
     container: {
-      // backgroundImage: `url(${Pattern})`,
       height: '100%',
       width: '100%',
       zIndex: -100,
       top: -97,
     },
     pattern: {
-      // display: this.props.project === 'Found' ? 'block' : 'none',
       position: 'absolute',
       zIndex: -1,
       top: -97,

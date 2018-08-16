@@ -5,8 +5,6 @@ import Mobile from '../../assets/images/screen-iphone.svg'
 import Badge from '../../assets/images/first-place-badge.svg'
 import DesktopScreen from '../elements/DesktopScreen'
 import MobileScreen from '../elements/MobileScreen'
-import Leaf from '../../assets/images/tropical-leaf-detail.svg'
-import Pattern from '../../assets/images/pattern-80s-outline.svg'
 
 export default class ContainerRightProjects extends Component {
   constructor(props) {
@@ -28,15 +26,6 @@ export default class ContainerRightProjects extends Component {
     screen: {
       zIndex: 10
     },
-    leaf: {
-      display: this.props.project === 'Jello' ? 'block' : 'none',
-      position: 'absolute',
-      height: 500,
-      zIndex: 11,
-      right: 240,
-      top: -340,
-      transform: 'rotate(-120deg)'
-    },
     column: {
       flexDirection: 'row',
       zIndex: 10
@@ -52,7 +41,6 @@ export default class ContainerRightProjects extends Component {
   render () {
     return (
       <Container style={this.style().container} >
-      <img style={this.style().leaf} src={Leaf} alt='a tropical leaf' />
         <Row>
           <Col md='8' lg='9' style={this.style().column}>
             <img style={this.style().screen} src={Desktop} alt='desktop computer image' />
