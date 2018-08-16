@@ -100,10 +100,11 @@ export default class LeftCarousel extends Component {
   })
 
   render () {
+    let textColor = this.props.project === 'Spacebnb' ? 'fade-light' : 'fade-dark'
     return (
       <Container style={this.style().container}>
         <Row>
-          <Col style={this.style().column}>
+          <Col className={textColor} style={this.style().column}>
             {this.makeList(this.state.idx)}
           </Col>
         </Row>

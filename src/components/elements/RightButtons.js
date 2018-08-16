@@ -4,7 +4,7 @@ import { Container, Row, Col, Button } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 
-export default class ContainerRightButtons extends Component {
+export default class RightButtons extends Component {
   constructor (props) {
     super(props)
 
@@ -29,18 +29,16 @@ export default class ContainerRightButtons extends Component {
       paddingLeft: 50,
       paddingRight: 50,
       fontWeight: 900,
-      color: this.props.project === 'Spacebnb' ? '#fff' : '#707070',
-      marginTop: 8,
       marginLeft: 20,
       marginRight: 20,
-      backgroundColor: this.props.project === 'Spacebnb' ? '#222' : '#fff',
+    },
+    centerText: {
+      marginTop: 2
     },
     buttonRound: {
       width: 50,
       height: 50,
-      color: this.props.project === 'Spacebnb' ? '#fff' : '#707070',
       fontWeight: 900,
-      backgroundColor: this.props.project === 'Spacebnb' ? '#222' : '#fff',
     },
     angleIconLeft: {
       fontSize: 32,
@@ -55,18 +53,19 @@ export default class ContainerRightButtons extends Component {
   })
 
   render () {
+    let buttonColor = this.props.project === 'Spacebnb' ? 'fade-dark-button' : 'fade-light-button'
     return (
       <Container style={this.style().container}>
         <Row>
           <Col style={this.style().column}>
-            <Button style={this.style().buttonRound} onClick={() => this.props.navProjects('back')} className='rounded-circle'>
+            <Button style={this.style().buttonRound} onClick={() => this.props.navProjects('back')} className={`${buttonColor} rounded-circle`}>
               <FontAwesomeIcon
                 style={this.style().angleIconLeft}
                 icon={faAngleLeft}
               />
             </Button>
-            <Button style={this.style().button} onClick={this.viewProject}>View</Button>
-            <Button style={this.style().buttonRound} onClick={() => this.props.navProjects('next')} className='rounded-circle'>
+            <Button className={buttonColor} style={this.style().button} onClick={this.viewProject}><div style={this.style().centerText}>View</div></Button>
+            <Button style={this.style().buttonRound} onClick={() => this.props.navProjects('next')} className={`${buttonColor} rounded-circle`}>
               <FontAwesomeIcon
                 style={this.style().angleIconRight}
                 icon={faAngleRight}

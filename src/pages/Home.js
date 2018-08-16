@@ -54,7 +54,15 @@ export default class Home extends Component {
       position: 'fixed',
       top: 0,
       left: 0,
-      zIndex: -9999
+      zIndex: -9999,
+      // animationName: 'stretch',
+      // animationDuration: '1.5s',
+      // animationTimingFunction: 'ease-out',
+      // animationDelay: '0s',
+      // animationDirection: 'alternate',
+      // animationIterationCount: 'infinite',
+      // animationFillMode: 'none',
+      // animationPlayState: 'running',
     },
     leaf: {
       display: this.state.project === 'Jello' ? 'block' : 'none',

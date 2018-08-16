@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import LeftCarousel from '../elements/LeftCarousel'
+import '../../index.css'
 
 export default class ContainerLeft extends Component {
   constructor (props) {
@@ -15,17 +16,19 @@ export default class ContainerLeft extends Component {
       width: '100%'
     },
     title: {
-      color: this.props.project === 'Spacebnb' ? '#fff' : '#707070',
       fontWeight: 900
     }
   })
 
+  
+
   render () {
+    let textColor = this.props.project === 'Spacebnb' ? 'fade-light' : 'fade-dark'
     return (
       <Container style={this.style().container}>
         <Row>
           <Col>
-            <h1 style={this.style().title}>
+            <h1 className={textColor} style={this.style().title}>
               Full stack web &<br /> mobile developer
             </h1>
           </Col>

@@ -3,10 +3,10 @@ import { Container, Row, Col, Button } from 'reactstrap'
 import Desktop from '../../assets/images/screen-imac.svg'
 import Mobile from '../../assets/images/screen-iphone.svg'
 import Badge from '../../assets/images/first-place-badge.svg'
-import DesktopScreen from '../elements/DesktopScreen'
-import MobileScreen from '../elements/MobileScreen'
+import DesktopScreen from './DesktopScreen'
+import MobileScreen from './MobileScreen'
 
-export default class ContainerRightProjects extends Component {
+export default class RightProjects extends Component {
   constructor(props) {
     super(props)
 
