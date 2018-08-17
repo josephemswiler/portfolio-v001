@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Container, Row, Col, Button } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
@@ -7,19 +8,46 @@ export default class RightButtons extends Component {
   constructor (props) {
     super(props)
 
-    this.state = {}
+    this.state = {
+      currentLink: ''
+    }
+  }
+
+  componentDidMount() {
+    this.updateLink()
+  }
+
+  componentDidUpdate (prevProps) {
+    if (prevProps.project !== this.props.project) {
+      this.updateLink()
+    }
   }
 
   viewProject = () => {
     console.log(this.props.project)
+  }
+
+  updateLink = () => {
     switch (this.props.project) {
       case 'Found':
+        this.setState({
+          currentLink: 'https://found-jfe.herokuapp.com/'
+        })
       break
       case 'Jello':
+      this.setState({
+        currentLink: 'https://jello-jfe.herokuapp.com/'
+      })
       break
       case 'Spacebnb':
+      this.setState({
+        currentLink: 'https://space-bnb.now.sh/'
+      })
       break
       case 'Dutch':
+      this.setState({
+        currentLink: 'https://github.com/josephemswiler'
+      })
       break
       default:
     }
@@ -72,6 +100,38 @@ export default class RightButtons extends Component {
     }
   })
 
+  renderViewButton = () => {
+    let buttonColor = this.props.project === 'Spacebnb'
+      ? 'fade-dark-button'
+      : 'fade-light-button'
+    if (this.props.project === 'Dutch') {
+      return (
+        <Button
+        className={buttonColor}
+        style={this.style().button}
+        disabled
+      >
+        <div style={this.style().centerText}>
+          WIP
+        </div>
+      </Button>
+      )
+    } else {
+      return (
+        <a href={this.state.currentLink} target='_blank'>
+        <Button
+          className={buttonColor}
+          style={this.style().button}
+        >
+          <div style={this.style().centerText}>
+            View {this.props.project}
+          </div>
+        </Button>
+        </a>
+      )
+    }
+  }
+
   render () {
     let buttonColor = this.props.project === 'Spacebnb'
       ? 'fade-dark-button'
@@ -90,15 +150,7 @@ export default class RightButtons extends Component {
                 icon={faAngleLeft}
               />
             </Button>
-            <Button
-              className={buttonColor}
-              style={this.style().button}
-              onClick={this.viewProject}
-            >
-              <div style={this.style().centerText}>
-                View {this.props.project}
-              </div>
-            </Button>
+            {this.renderViewButton()}
             <Button
               style={this.style().buttonRound}
               onClick={() => this.props.navProjects('next')}

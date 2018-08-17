@@ -6,17 +6,16 @@ import Pattern from '../assets/images/background-found.svg'
 import Leaf from '../assets/images/tropical-leaf-detail.svg'
 import webVR from '../three/index'
 import '../index.css'
-import WOW from "wowjs"
 
 export default class Home extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
-        currentWindowHeight: window.innerHeight,
-        project: null,
-        idx: 0,
-        projects: ['Dutch', 'Spacebnb', 'Jello', 'Found']
+      currentWindowHeight: window.innerHeight,
+      project: null,
+      idx: 0,
+      projects: ['Spacebnb', 'Jello', 'Found', 'Dutch']
     }
   }
 
@@ -65,14 +64,18 @@ export default class Home extends Component {
       width: '100vw',
       height: '100vh',
       display: 'block',
-      visibility: this.state.projects[this.state.idx] === 'Spacebnb' ? 'visible' : 'hidden',
+      visibility: this.state.projects[this.state.idx] === 'Spacebnb'
+        ? 'visible'
+        : 'hidden',
       position: 'fixed',
       top: 0,
       left: 0,
-      zIndex: -9999,
+      zIndex: -9999
     },
     leaf: {
-      display: this.state.projects[this.state.idx] === 'Jello' ? 'block' : 'none',
+      display: this.state.projects[this.state.idx] === 'Jello'
+        ? 'block'
+        : 'none',
       position: 'absolute',
       height: 500,
       zIndex: 11,
@@ -81,7 +84,9 @@ export default class Home extends Component {
       transform: 'rotate(-120deg)'
     },
     leafTwo: {
-      display: this.state.projects[this.state.idx] === 'Jello' ? 'block' : 'none',
+      display: this.state.projects[this.state.idx] === 'Jello'
+        ? 'block'
+        : 'none',
       position: 'absolute',
       height: 500,
       zIndex: -1,
@@ -90,7 +95,9 @@ export default class Home extends Component {
       transform: 'rotate(120deg)'
     },
     leafThree: {
-      display: this.state.projects[this.state.idx] === 'Jello' ? 'block' : 'none',
+      display: this.state.projects[this.state.idx] === 'Jello'
+        ? 'block'
+        : 'none',
       position: 'absolute',
       height: 500,
       zIndex: -1,
@@ -123,18 +130,33 @@ export default class Home extends Component {
     return (
       <Container style={this.style().wrapper} fluid>
         <div
+          className='scale-up'
           style={this.style().canvas}
           ref={element => {
             this.webVR = element
           }}
         />
-          <img style={this.style().leafTwo} src={Leaf} alt='a tropical leaf' />
+        <img style={this.style().leafTwo} src={Leaf} alt='a tropical leaf' />
         <Row>
-          <Col xs='12' sm='12' md='5' lg='4' style={this.style().containerWrapper}>
-          <Container style={this.style().container}>
-            <ContainerLeft project={this.state.projects[this.state.idx]} navProjects={this.navProjects}/>
-          <img className='d-md-none' style={this.style().leaf} src={Leaf} alt='a tropical leaf' />
-          </Container>
+          <Col
+            xs='12'
+            sm='12'
+            md='5'
+            lg='4'
+            style={this.style().containerWrapper}
+          >
+            <Container style={this.style().container}>
+              <ContainerLeft
+                project={this.state.projects[this.state.idx]}
+                navProjects={this.navProjects}
+              />
+              <img
+                className='d-md-none'
+                style={this.style().leaf}
+                src={Leaf}
+                alt='a tropical leaf'
+              />
+            </Container>
           </Col>
           <Col
             xs='12'
@@ -144,9 +166,12 @@ export default class Home extends Component {
             className='d-none d-md-block'
             style={this.style().container}
           >
-          <img style={this.style().leaf} src={Leaf} alt='a tropical leaf' />
-              <ContainerRight project={this.state.projects[this.state.idx]} navProjects={this.navProjects} />
-              
+            <img style={this.style().leaf} src={Leaf} alt='a tropical leaf' />
+            <ContainerRight
+              project={this.state.projects[this.state.idx]}
+              navProjects={this.navProjects}
+            />
+
           </Col>
         </Row>
         <img style={this.style().leafThree} src={Leaf} alt='a tropical leaf' />

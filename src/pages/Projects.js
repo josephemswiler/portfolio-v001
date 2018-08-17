@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Container, Row, Col, Button } from 'reactstrap'
 // import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 // import ContainerLeft from '../components/containers/ContainerLeft'
-import AllTechnology from '../components/elements/AllTechnology'
 
 export default class Project extends Component {
   constructor (props) {
@@ -43,7 +42,6 @@ export default class Project extends Component {
             <Button style={this.style().button}>Projects</Button>
           </Col>
           <Col xs='12' sm='12' md='7' lg='8' style={this.style().container}>
-            <AllTechnology />
           </Col>
         </Row>
       </Container>
