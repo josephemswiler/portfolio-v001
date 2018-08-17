@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Container, Row, Col, Button } from 'reactstrap'
 import RightProjects from '../elements/RightProjects'
 import RightButtons from '../elements/RightButtons'
-// import RightTechnology from '../elements/RightTechnology'
+// import LeftTechnology from '../elements/LeftTechnology'
 
 export default class ContainerRight extends Component {
   constructor (props) {
@@ -91,12 +91,13 @@ export default class ContainerRight extends Component {
           <Col>
             <RightProjects
               project={this.state.projects[this.state.idx]}
-            />
-            {/* <RightTechnology technology={this.state.projects[this.state.idx].tech} /> */}
-            <RightButtons
-              project={this.state.projects[this.state.idx]}
               navProjects={this.navProjects}
             />
+            {/* <LeftTechnology technology={this.state.projects[this.state.idx].tech} /> */}
+            {/* <RightButtons
+              project={this.state.projects[this.state.idx]}
+              navProjects={this.navProjects}
+            /> */}
           </Col>
         </Row>
       </Container>

@@ -4,7 +4,6 @@ import ContainerLeft from '../components/containers/ContainerLeft'
 import ContainerRight from '../components/containers/ContainerRight'
 import AbsoluteSide from '../components/containers/AbsoluteSide'
 import Pattern from '../assets/images/background-found.svg'
-import NavBottom from '../components/elements/NavBottom'
 import Leaf from '../assets/images/tropical-leaf-detail.svg'
 import webVR from '../three/index'
 import '../index.css'
@@ -75,7 +74,7 @@ export default class Home extends Component {
       top: -240,
       transform: 'rotate(-120deg)'
     },
-    containerLeft: {
+    containerLeftRight: {
       height: this.state.currentWindowHeight
         ? this.state.currentWindowHeight - 97
         : '100%',
@@ -92,14 +91,6 @@ export default class Home extends Component {
         : '100%',
       margin: 0,
       padding: 0
-    },
-    containerRight: {
-      height: this.state.currentWindowHeight
-        ? this.state.currentWindowHeight - 97
-        : '100%',
-      margin: 0,
-      padding: 0,
-      paddingTop: 97
     }
   })
 
@@ -113,27 +104,26 @@ export default class Home extends Component {
           }}
         />
         <Row>
-          <Col xs='12' sm='8' md='5' lg='4' style={this.style().containerLeft}>
+          <Col xs='12' sm='8' md='5' lg='4' style={this.style().containerLeftRight}>
             <ContainerLeft project={this.state.project}/>
-            <NavBottom />
+            {/* <Container style={this.style().containerLeftRight}>
+              <ContainerRight updateBackground={this.updateBackground}/>
+            </Container> */}
           </Col>
           <Col
             xs='12'
+            sm='12'
             md='7'
             lg='8'
-            className='d-none d-md-block'
+            // className='d-none d-md-block'
             style={this.style().containerRightWrapper}
           >
           <img className='leaf' style={this.style().leaf} src={Leaf} alt='a tropical leaf' />
-            <Container style={this.style().containerRight}>
+            <Container style={this.style().containerLeftRight}>
               <ContainerRight updateBackground={this.updateBackground}/>
             </Container>
           </Col>
         </Row>
-        {/* <Row>
-          <Col />
-          </Row> */}
-        {/* <AbsoluteSide height={this.state.currentWindowHeight} /> */}
       </Container>
     )
   }

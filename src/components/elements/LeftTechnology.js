@@ -206,7 +206,8 @@ export default class LeftTechnology extends Component {
         'Seuqelize',
         'Express.js',
         'Handlebars.js',
-        'Adobe XD'
+        'Adobe XD',
+        'Adobe Photoshop'
       ]
     },
     {
@@ -224,7 +225,10 @@ export default class LeftTechnology extends Component {
         'Robo 3T',
         'Mongoose',
         'Express.js',
-        'Adobe XD'
+        'Adobe XD',
+        'Adobe Illustrator',
+        'Adobe Photoshop',
+        'MVC Framework'
       ]
     },
     {
@@ -242,29 +246,56 @@ export default class LeftTechnology extends Component {
         'Express.js',
         'Handlebars.js',
         'MVC Framework',
-        'Adobe XD'
+        'Adobe XD',
+        'Adobe Illustrator',
+        'Adobe Photoshop'
       ]
     }
   ]
 
-  addIDs = () => {}
+  fisherYates = arr => {
+    let idx = arr.length, temp, randIdx
 
-  componentDidMount () {
-    console.log(this.props.project)
-    // let currentProjectTech = this.projectObjects.filter(
-    //   item => item.name === this.props.project
-    // )[0].tech
+    while (idx !== 0) {
 
-    // this.setState({
-    //   hydratedTechList: this.techList.filter( (item) => currentProjectTech.includes(item.name))
-    // })
+      randIdx = Math.floor(Math.random() * idx)
+      idx -= 1
+
+      temp = arr[idx]
+      arr[idx] = arr[randIdx]
+      arr[randIdx] = temp
+    }
+    return arr
+  }
+
+  componentDidUpdate (prevProps) {
+    if (prevProps.project !== this.props.project) {
+      let currentProjectTech = this.projectObjects.filter(
+        item => item.name === this.props.project
+      )[0].tech
+
+      let randomList = this.fisherYates(
+        this.techList.filter(item => currentProjectTech.includes(item.name))
+      )
+
+      this.setState({
+        hydratedTechList: randomList
+      })
+    }
   }
 
   style = () => ({
+    container: {
+      margin: 0,
+      padding: 0,
+    },
     techListWrapper: {
       display: 'flex',
       flexDirection: 'row',
-      flexWrap: 'wrap'
+      flexWrap: 'wrap',
+      justifyContent: 'flex-start',
+      padding: 0,
+  
     },
     iconWrapper: {
       display: 'flex',
@@ -285,8 +316,9 @@ export default class LeftTechnology extends Component {
   })
 
   render () {
+    let textColor = this.props.project === 'Spacebnb' ? 'fade-light' : 'fade-dark'
     return (
-      <Container className='mt-3 mb-3'>
+      <Container style={this.style().container}>
         <Row>
           <Col style={this.style().techListWrapper}>
             {this.state.hydratedTechList.map((item, idx) => {
@@ -299,7 +331,7 @@ export default class LeftTechnology extends Component {
                       alt='a technology icon'
                     />
                   </a>
-                  <span style={this.style().iconLabel}>{item.name}</span>
+                  <span className={textColor} style={this.style().iconLabel}>{item.name}</span>
                 </div>
               )
             })}

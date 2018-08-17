@@ -18,13 +18,16 @@ export default class RightButtons extends Component {
   style = () => ({
     container: {
       margin: 0,
-      padding: 0
+      padding: 0,
+      paddingTop: 20
     },
     column: {
-      textAlign: 'center'
+      textAlign: 'center',
+      padding: 0,
     },
     button: {
       height: 50,
+      width: 215,
       borderRadius: 60,
       paddingLeft: 50,
       paddingRight: 50,
@@ -64,7 +67,7 @@ export default class RightButtons extends Component {
                 icon={faAngleLeft}
               />
             </Button>
-            <Button className={buttonColor} style={this.style().button} onClick={this.viewProject}><div style={this.style().centerText}>View</div></Button>
+            <Button className={buttonColor} style={this.style().button} onClick={this.viewProject}><div style={this.style().centerText}>View {this.props.project}</div></Button>
             <Button style={this.style().buttonRound} onClick={() => this.props.navProjects('next')} className={`${buttonColor} rounded-circle`}>
               <FontAwesomeIcon
                 style={this.style().angleIconRight}

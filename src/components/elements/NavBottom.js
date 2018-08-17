@@ -78,7 +78,8 @@ export default class NavBottom extends Component {
       position: 'fixed',
       zIndex: 2,
       right: 0,
-      marginRight: 20
+      padding: 20,
+      bottom: 20
     },
     link: {
       margin: 15,

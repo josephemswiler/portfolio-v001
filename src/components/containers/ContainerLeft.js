@@ -13,7 +13,7 @@ export default class ContainerLeft extends Component {
 
   style = () => ({
     container: {
-      height: '100%',
+      // height: '100%',
       width: '100%'
     },
     title: {
@@ -34,8 +34,7 @@ export default class ContainerLeft extends Component {
         </Row>
         <Row>
           <Col>
-            {/* <LeftCarousel project={this.props.project} /> */}
-            <LeftTechnology project={this.props.project} />
+            {/* <LeftTechnology project={this.props.project} /> */}
           </Col>
         </Row>
       </Container>
