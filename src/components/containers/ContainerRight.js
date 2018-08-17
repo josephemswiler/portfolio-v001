@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Container, Row, Col, Button } from 'reactstrap'
 import RightProjects from '../elements/RightProjects'
-import RightButtons from '../elements/RightButtons'
-// import LeftTechnology from '../elements/LeftTechnology'
 
 export default class ContainerRight extends Component {
   constructor (props) {
@@ -10,11 +8,7 @@ export default class ContainerRight extends Component {
 
     this.state = {
       idx: 0,
-      projects: [
-        'Jello',
-        'Spacebnb',
-        'Found'
-      ]
+      projects: ['Jello', 'Spacebnb', 'Found']
     }
   }
 
@@ -93,11 +87,6 @@ export default class ContainerRight extends Component {
               project={this.state.projects[this.state.idx]}
               navProjects={this.navProjects}
             />
-            {/* <LeftTechnology technology={this.state.projects[this.state.idx].tech} /> */}
-            {/* <RightButtons
-              project={this.state.projects[this.state.idx]}
-              navProjects={this.navProjects}
-            /> */}
           </Col>
         </Row>
       </Container>

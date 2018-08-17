@@ -18,12 +18,6 @@ export default canvas => {
   const renderer = buildRender(screenDimensions)
   const camera = buildCamera(screenDimensions)
   const sceneSubjects = createSceneSubjects(scene)
-  const initCameraTarget = {
-    x: 0, 
-    y: 0,
-    z: 0 
-  }
-
 
   function buildScene () {
     const scene = new THREE.Scene()

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Tooltip } from 'reactstrap'
+import { Tooltip } from 'reactstrap'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -106,6 +106,7 @@ export default class NavBottom extends Component {
           style={this.style().link}
           href='https://github.com/josephemswiler'
           target='_blank'
+          rel="noopener noreferrer"
           onMouseEnter={this.hoverGitHub}
           onMouseLeave={this.hoverGitHub}
         >
@@ -119,6 +120,7 @@ export default class NavBottom extends Component {
           style={this.style().link}
           href='https://www.linkedin.com/in/josephemswiler/'
           target='_blank'
+          rel="noopener noreferrer"
           onMouseEnter={this.hoverLinkedIn}
           onMouseLeave={this.hoverLinkedIn}
         >
@@ -131,6 +133,7 @@ export default class NavBottom extends Component {
           style={this.style().link}
           href='mailto:josephemswiler@gmail.com'
           target='_blank'
+          rel="noopener noreferrer"
           onMouseEnter={this.hoverEmail}
           onMouseLeave={this.hoverEmail}
         >

@@ -49,9 +49,6 @@ export default class NavTop extends Component {
           >
             Joseph<br />Emswiler
           </Link>
-          <Button style={this.style().button} className='d-block d-md-none'>
-            Projects
-          </Button>
         </Navbar>
       </div>
     )

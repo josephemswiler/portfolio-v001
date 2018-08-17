@@ -15,7 +15,8 @@ export default class ContainerLeft extends Component {
   style = () => ({
     container: {
       // height: '100%',
-      width: '100%'
+      width: '100%',
+      maxWidth: '100%'
     },
     title: {
       fontWeight: 900
@@ -25,18 +26,19 @@ export default class ContainerLeft extends Component {
   render () {
     let textColor = this.props.project === 'Spacebnb' ? 'fade-light' : 'fade-dark'
     return (
-      <Container style={this.style().container}>
+      <Container className='m-sm-0' style={this.style().container}>
         <Row>
           <Col>
             <h1 className={textColor} style={this.style().title}>
               Full stack web &<br /> mobile developer
             </h1>
+            
           </Col>
         </Row>
         <Row className='d-block d-md-none'>
           <Col>
             {/* <LeftTechnology project={this.props.project} /> */}
-              <MobileCard />
+              <MobileCard project={this.props.project} />
           </Col>
         </Row>
       </Container>

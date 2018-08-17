@@ -1,21 +1,71 @@
-import React, { Component } from 'react';
-import { Card, CardBody, Button,  CardHeader, CardTitle, CardText, CardImg } from 'reactstrap';
+import React, { Component } from 'react'
+import {
+  Card,
+  CardBody,
+  Button,
+  CardImg
+} from 'reactstrap'
+import FoundImage from '../../assets/images/screenshot-found.png'
+import SpacebnbImage from '../../assets/images/screenshot-spacebnb.png'
+import JelloImage from '../../assets/images/screenshot-jello.png'
 
 export default class MobileCard extends Component {
-  render() {
+  constructor(props) {
+    super(props)
+
+    this.state={
+      projectImage: null
+    }
+  }
+
+  currentProjects = {
+    Jello: JelloImage,
+    Found: FoundImage,
+    Spacebnb: SpacebnbImage
+  }
+
+  componentDidUpdate (prevProps) {
+    if (prevProps.project !== this.props.project) {
+
+      this.setState({
+        projectImage: this.currentProjects[this.props.project]
+      })
+    }
+  }
+
+  style = () => ({
+    card: {
+      backgroundColor: 'transparent',
+      border: 'none',
+      boxShadow: 'none',
+      textAlign: 'center'
+    },
+    button: {
+      height: 50,
+      width: 215,
+      borderRadius: 60,
+      paddingLeft: 50,
+      paddingRight: 50,
+      fontWeight: 900,
+      marginLeft: 20,
+      marginRight: 20,
+    },
+  })
+
+  render () {
+    let buttonColor = this.props.project === 'Spacebnb' ? 'fade-dark-button' : 'fade-light-button'
     return (
-      <Card>
-        <CardHeader>Header</CardHeader>
-      <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-      <CardBody>
-        <CardTitle>Card Title</CardTitle>
-        <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
-        <CardText>
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </CardText>
-      </CardBody>
-    </Card>
+      <Card style={this.style().card}>
+        <CardImg
+          top
+          width='100%'
+          src={this.state.projectImage}
+          alt='a preview image of a web app'
+        />
+        <CardBody>
+        <Button className={buttonColor} style={this.style().button} onClick={this.viewProject}><div style={this.style().centerText}>View {this.props.project}</div></Button>
+        </CardBody>
+      </Card>
     )
   }
 }
-
