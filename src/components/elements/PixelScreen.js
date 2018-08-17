@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
-import Found from '../../assets/images/mobile-found.svg'
-import Spacebnb from '../../assets/images/mobile-spacebnb.svg'
-import Jello from '../../assets/images/mobile-jello.svg'
-import Dutch from '../../assets/images/mobile-dutch.svg'
+import Dutch from '../../assets/images/pixel-dutch.svg'
 
-export default class MobileScreen extends Component {
+export default class PixelScreen extends Component {
   constructor (props) {
     super(props)
 
@@ -25,22 +22,7 @@ export default class MobileScreen extends Component {
 
   selectProject = () => {
     switch (this.props.project) {
-      case 'Jello':
-        this.setState({
-          src: Jello
-        })
-        break
-      case 'Spacebnb':
-        this.setState({
-          src: Spacebnb
-        })
-        break
-      case 'Found':
-        this.setState({
-          src: Found
-        })
-        break
-        case 'Dutch':
+      case 'Dutch':
         this.setState({
           src: Dutch
         })
@@ -53,7 +35,7 @@ export default class MobileScreen extends Component {
     screenSVG: {
       position: 'absolute',
       zIndex: 0,
-      top: 6,
+      top: 20,
       left: 15
     }
   })

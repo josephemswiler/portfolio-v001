@@ -14,28 +14,15 @@ export default class DesktopScreen extends Component {
 
   componentDidUpdate (prevProps) {
     if (prevProps.project !== this.props.project) {
-      switch (this.props.project) {
-        case 'Jello':
-          this.setState({
-            src: Jello
-          })
-          break
-        case 'Spacebnb':
-          this.setState({
-            src: Spacebnb
-          })
-          break
-        case 'Found':
-          this.setState({
-            src: Found
-          })
-          break
-        default:
-      }
+      this.selectProject()
     }
   }
 
   componentDidMount () {
+    this.selectProject()
+  }
+
+  selectProject = () => {
     switch (this.props.project) {
       case 'Jello':
         this.setState({
