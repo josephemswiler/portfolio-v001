@@ -7,6 +7,7 @@ import {
 import FoundImage from '../../assets/images/screenshot-found.png'
 import SpacebnbImage from '../../assets/images/screenshot-spacebnb.png'
 import JelloImage from '../../assets/images/screenshot-jello.png'
+import DutchImage from '../../assets/images/screenshot-dutch.png'
 import RightButtons from './RightButtons'
 
 export default class MobileCard extends Component {
@@ -21,7 +22,8 @@ export default class MobileCard extends Component {
   currentProjects = {
     Jello: JelloImage,
     Found: FoundImage,
-    Spacebnb: SpacebnbImage
+    Spacebnb: SpacebnbImage,
+    Dutch: DutchImage
   }
 
   componentDidMount () {

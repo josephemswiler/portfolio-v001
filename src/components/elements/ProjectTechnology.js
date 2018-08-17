@@ -250,22 +250,24 @@ export default class ProjectTechnology extends Component {
         'Adobe Illustrator',
         'Adobe Photoshop'
       ]
+    },
+    {
+      name: 'Dutch',
+      tech: [
+        'JSX',
+        'CSS 3',
+        'React.js',
+        'React Native',
+        'Expo',
+        'JavaScript',
+        'AWS',
+        'Node.js',
+        'Adobe XD',
+        'Adobe Illustrator',
+        'Adobe Photoshop'
+      ]
     }
   ]
-
-  // fisherYates = arr => {
-  //   let idx = arr.length, temp, randIdx
-
-  //   while (idx !== 0) {
-  //     randIdx = Math.floor(Math.random() * idx)
-  //     idx -= 1
-
-  //     temp = arr[idx]
-  //     arr[idx] = arr[randIdx]
-  //     arr[randIdx] = temp
-  //   }
-  //   return arr
-  // }
 
   componentDidMount () {
     if (this.props.project) {
@@ -283,10 +285,6 @@ export default class ProjectTechnology extends Component {
     let currentProjectTech = this.projectObjects.filter(
       item => item.name === this.props.project
     )[0].tech
-
-    // let randomList = this.fisherYates(
-      
-    // )
 
     this.setState({
       hydratedTechList: this.techList.filter(item => currentProjectTech.includes(item.name))

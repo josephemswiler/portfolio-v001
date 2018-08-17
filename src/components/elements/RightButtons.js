@@ -19,6 +19,8 @@ export default class RightButtons extends Component {
       break
       case 'Spacebnb':
       break
+      case 'Dutch':
+      break
       default:
     }
   }

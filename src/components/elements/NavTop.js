@@ -18,17 +18,7 @@ export default class NavTop extends Component {
       fontSize: 18,
       fontFamily: `'Nunito', sans-serif`,
       fontWeight: 900,
-      color: '#707070',
-      zIndex: 10
-    },
-    button: {
-      borderRadius: 60,
-      fontFamily: `'Nunito', sans-serif`,
-      fontWeight: 900,
-      color: '#707070',
-      paddingLeft: 40,
-      paddingRight: 40,
-      zIndex: 10
+      color: '#707070'
     }
   })
 

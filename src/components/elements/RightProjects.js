@@ -34,7 +34,7 @@ export default class RightProjects extends Component {
       zIndex: 10
     },
     column: {
-      flexDirection: 'row',
+      display: this.props.project === 'Dutch' ? 'none' : 'block',
       zIndex: 10
     },
     badge: {
@@ -44,8 +44,11 @@ export default class RightProjects extends Component {
       height: 100,
       zIndex: 11
     },
+    mobileCol: {
+      display: this.props.project === 'Dutch' ? 'block' : 'none',
+    },
     centerCol: {
-      display: 'flex',
+      display: this.props.project === 'Dutch' ? 'flex' : 'none',
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center'
@@ -71,15 +74,15 @@ export default class RightProjects extends Component {
     return (
       <Container style={this.style().container}>
         <Row>
-          {/* <Col md='8' lg='9' style={this.style().column}>
+          <Col md='8' lg='9' style={this.style().column}>
             <img
               style={this.style().screen}
               src={Desktop}
               alt='a preview of a web app on a desktop display'
             />
             <DesktopScreen project={this.props.project} />
-          </Col> */}
-          <Col md='4' lg='3'>
+          </Col>
+          <Col md='4' lg='3' style={this.style().mobileCol}>
             <img
               style={this.style().screen}
               src={Pixel}
@@ -109,7 +112,7 @@ export default class RightProjects extends Component {
               src={Badge}
               alt='first place badge'
             />
-            <MobileScreen project={'Dutch'} />
+            <MobileScreen project={this.props.project} />
           </Col>
         </Row>
         <Container>

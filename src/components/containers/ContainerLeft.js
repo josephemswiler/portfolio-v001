@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
-// import LeftCarousel from '../elements/LeftCarousel'
 import ProjectTechnology from '../elements/ProjectTechnology'
 import MobileCard from '../elements/MobileCard'
 import '../../index.css'
@@ -14,7 +13,6 @@ export default class ContainerLeft extends Component {
 
   style = () => ({
     container: {
-      // height: '100%',
       width: '100%',
       maxWidth: '100%'
     },

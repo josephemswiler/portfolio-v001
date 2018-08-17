@@ -86,16 +86,15 @@ export default class NavBottom extends Component {
 
   style = () => ({
     container: {
-      position: 'fixed',
-      zIndex: 2,
+      position: 'absolute',
       right: this.state.width < 768 || this.state.width > 1400 ? 0 : null,
       padding: 20,
       bottom: this.state.width > 767 ? 11 : null,
-      top: this.state.width > 767 ? null : 11
+      top: this.state.width > 767 ? null : 11,
+      zIndex: 1031
     },
     link: {
       margin: 15,
-      zIndex: 10
     },
     gitHub: {
       fontSize: 32,

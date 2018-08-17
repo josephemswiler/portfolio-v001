@@ -7,13 +7,6 @@ import Home from './pages/Home'
 import Projects from './pages/Projects'
 
 export default class App extends Component {
-  constructor (props) {
-    super(props)
-
-    this.state = {
-    }
-  }
-
   render () {
     return (
       <Router>

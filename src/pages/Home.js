@@ -6,6 +6,7 @@ import Pattern from '../assets/images/background-found.svg'
 import Leaf from '../assets/images/tropical-leaf-detail.svg'
 import webVR from '../three/index'
 import '../index.css'
+import WOW from "wowjs"
 
 export default class Home extends Component {
   constructor (props) {
@@ -15,7 +16,7 @@ export default class Home extends Component {
         currentWindowHeight: window.innerHeight,
         project: null,
         idx: 0,
-        projects: ['Jello', 'Spacebnb', 'Found']
+        projects: ['Dutch', 'Spacebnb', 'Jello', 'Found']
     }
   }
 
@@ -29,7 +30,6 @@ export default class Home extends Component {
         } else {
           this.setState({ idx: currentIdx + 1 })
         }
-        this.resetInterval()
         break
       case 'back':
         if (currentIdx === 0) {
@@ -37,34 +37,14 @@ export default class Home extends Component {
         } else {
           this.setState({ idx: currentIdx - 1 })
         }
-        this.resetInterval()
         break
       default:
     }
   }
 
-  resetInterval = () => {
-    clearInterval(this.interval)
-    this.imageInterval()
-  }
-
-  imageInterval = () => {
-    this.interval = setInterval(() => {
-      if (this.state.idx >= this.state.projects.length - 1) {
-        this.setState({ idx: 0 })
-      } else {
-        this.setState({ idx: this.state.idx + 1 })
-      }
-    }, 3500)
-  }
-
   componentDidMount () {
     webVR(this.webVR)
     window.addEventListener('resize', this.windowResize)
-    this.imageInterval()
-    // this.setState({
-    //   currentWindowHeight: window.innerHeight
-    // })
   }
 
   windowResize = () => {
@@ -90,14 +70,6 @@ export default class Home extends Component {
       top: 0,
       left: 0,
       zIndex: -9999,
-      // animationName: 'stretch',
-      // animationDuration: '1.5s',
-      // animationTimingFunction: 'ease-out',
-      // animationDelay: '0s',
-      // animationDirection: 'alternate',
-      // animationIterationCount: 'infinite',
-      // animationFillMode: 'none',
-      // animationPlayState: 'running',
     },
     leaf: {
       display: this.state.projects[this.state.idx] === 'Jello' ? 'block' : 'none',
@@ -105,8 +77,26 @@ export default class Home extends Component {
       height: 500,
       zIndex: 11,
       right: 240,
-      top: -240,
+      top: -285,
       transform: 'rotate(-120deg)'
+    },
+    leafTwo: {
+      display: this.state.projects[this.state.idx] === 'Jello' ? 'block' : 'none',
+      position: 'absolute',
+      height: 500,
+      zIndex: -1,
+      left: -100,
+      top: 180,
+      transform: 'rotate(120deg)'
+    },
+    leafThree: {
+      display: this.state.projects[this.state.idx] === 'Jello' ? 'block' : 'none',
+      position: 'absolute',
+      height: 500,
+      zIndex: -1,
+      right: -10,
+      bottom: -300,
+      transform: 'rotate(-40deg)'
     },
     container: {
       height: this.state.currentWindowHeight
@@ -138,7 +128,7 @@ export default class Home extends Component {
             this.webVR = element
           }}
         />
-        
+          <img style={this.style().leafTwo} src={Leaf} alt='a tropical leaf' />
         <Row>
           <Col xs='12' sm='12' md='5' lg='4' style={this.style().containerWrapper}>
           <Container style={this.style().container}>
@@ -155,11 +145,11 @@ export default class Home extends Component {
             style={this.style().container}
           >
           <img style={this.style().leaf} src={Leaf} alt='a tropical leaf' />
-            {/* <Container style={this.style().container}> */}
               <ContainerRight project={this.state.projects[this.state.idx]} navProjects={this.navProjects} />
-            {/* </Container> */}
+              
           </Col>
         </Row>
+        <img style={this.style().leafThree} src={Leaf} alt='a tropical leaf' />
       </Container>
     )
   }
