@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import {
   Card,
   CardBody,
-  Button,
   CardImg
 } from 'reactstrap'
 import FoundImage from '../../assets/images/screenshot-found.png'
@@ -23,6 +22,12 @@ export default class MobileCard extends Component {
     Jello: JelloImage,
     Found: FoundImage,
     Spacebnb: SpacebnbImage
+  }
+
+  componentDidMount () {
+    this.setState({
+      projectImage: this.currentProjects[this.props.project]
+    })
   }
 
   componentDidUpdate (prevProps) {
@@ -54,7 +59,6 @@ export default class MobileCard extends Component {
   })
 
   render () {
-    let buttonColor = this.props.project === 'Spacebnb' ? 'fade-dark-button' : 'fade-light-button'
     return (
       <Card style={this.style().card}>
         <CardImg
@@ -64,7 +68,6 @@ export default class MobileCard extends Component {
           alt='a preview image of a web app'
         />
         <CardBody>
-        {/* <Button className={buttonColor} style={this.style().button} onClick={this.viewProject}><div style={this.style().centerText}>View {this.props.project}</div></Button> */}
         <RightButtons navProjects={this.props.navProjects} project={this.props.project} />
         </CardBody>
       </Card>

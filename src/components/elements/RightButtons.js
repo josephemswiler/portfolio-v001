@@ -12,6 +12,15 @@ export default class RightButtons extends Component {
 
   viewProject = () => {
     console.log(this.props.project)
+    switch (this.props.project) {
+      case 'Found':
+      break
+      case 'Jello':
+      break
+      case 'Spacebnb':
+      break
+      default:
+    }
   }
 
   style = () => ({
