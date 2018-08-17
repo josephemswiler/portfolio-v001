@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import LeftCarousel from '../elements/LeftCarousel'
 import LeftTechnology from '../elements/LeftTechnology'
+import MobileCard from '../elements/MobileCard'
 import '../../index.css'
 
 export default class ContainerLeft extends Component {
@@ -32,9 +33,10 @@ export default class ContainerLeft extends Component {
             </h1>
           </Col>
         </Row>
-        <Row>
+        <Row className='d-block d-md-none'>
           <Col>
             {/* <LeftTechnology project={this.props.project} /> */}
+              <MobileCard />
           </Col>
         </Row>
       </Container>
