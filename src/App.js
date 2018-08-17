@@ -4,7 +4,7 @@ import 'bootswatch/dist/materia/bootstrap.css'
 import NavTop from './components/elements/NavTop'
 import NavBottom from './components/elements/NavBottom'
 import Home from './pages/Home'
-import Project from './pages/Project'
+import Projects from './pages/Projects'
 
 export default class App extends Component {
   constructor (props) {
@@ -21,8 +21,8 @@ export default class App extends Component {
           <NavTop />
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/project' component={Project} />
-            <Route exact path='/project/:id' component={Project} />
+            <Route exact path='/projects' component={Projects} />
+            <Route path='/projects/:id' component={Projects} />
           </Switch>
           <NavBottom />
         </div>

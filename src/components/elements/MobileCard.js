@@ -8,6 +8,7 @@ import {
 import FoundImage from '../../assets/images/screenshot-found.png'
 import SpacebnbImage from '../../assets/images/screenshot-spacebnb.png'
 import JelloImage from '../../assets/images/screenshot-jello.png'
+import RightButtons from './RightButtons'
 
 export default class MobileCard extends Component {
   constructor(props) {
@@ -63,7 +64,8 @@ export default class MobileCard extends Component {
           alt='a preview image of a web app'
         />
         <CardBody>
-        <Button className={buttonColor} style={this.style().button} onClick={this.viewProject}><div style={this.style().centerText}>View {this.props.project}</div></Button>
+        {/* <Button className={buttonColor} style={this.style().button} onClick={this.viewProject}><div style={this.style().centerText}>View {this.props.project}</div></Button> */}
+        <RightButtons navProjects={this.props.navProjects} project={this.props.project} />
         </CardBody>
       </Card>
     )

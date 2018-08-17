@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Navbar, NavbarBrand, Button } from 'reactstrap'
+import { Navbar } from 'reactstrap'
 
 export default class NavTop extends Component {
   constructor (props) {
@@ -23,8 +23,6 @@ export default class NavTop extends Component {
     },
     button: {
       borderRadius: 60,
-      paddingLeft: 20,
-      paddingRight: 20,
       fontFamily: `'Nunito', sans-serif`,
       fontWeight: 900,
       color: '#707070',

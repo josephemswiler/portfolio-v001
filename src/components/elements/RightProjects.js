@@ -6,23 +6,22 @@ import Badge from '../../assets/images/first-place-badge.svg'
 import DesktopScreen from './DesktopScreen'
 import MobileScreen from './MobileScreen'
 import RightButtons from './RightButtons'
+import ProjectTeachnology from './ProjectTechnology'
 
 export default class RightProjects extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
-    this.state={
-
-    }
+    this.state = {}
   }
-  
+
   style = () => ({
     container: {
       height: '100%',
       width: '100%',
       margin: 0,
       padding: 0,
-      paddingRight: 50,
+      paddingRight: 50
     },
     screen: {
       zIndex: 10
@@ -41,24 +40,44 @@ export default class RightProjects extends Component {
   })
   render () {
     return (
-      <Container style={this.style().container} >
+      <Container style={this.style().container}>
         <Row>
           <Col md='8' lg='9' style={this.style().column}>
-            <img style={this.style().screen} src={Desktop} alt='desktop computer image' />
+            <img
+              style={this.style().screen}
+              src={Desktop}
+              alt='a preview of a web app on a desktop display'
+            />
             <DesktopScreen project={this.props.project} />
-            <Container className='d-none d-lg-block p-0'>
-            <RightButtons project={this.props.project} navProjects={this.props.navProjects} />
-            </Container>
+            {/* <Container className='d-none d-lg-block p-0'>
+              <RightButtons
+                project={this.props.project}
+                navProjects={this.props.navProjects}
+              />
+              <ProjectTeachnology project={this.props.project} />
+            </Container> */}
           </Col>
           <Col md='4' lg='3'>
-          <img style={this.style().screen} src={Mobile} alt='mobile phone image' />
-          <img style={this.style().badge} src={Badge} alt='first place badge' />
-          <MobileScreen project={this.props.project} />
+            <img
+              style={this.style().screen}
+              src={Mobile}
+              alt='a mobile responsive web app'
+            />
+            <img
+              style={this.style().badge}
+              src={Badge}
+              alt='first place badge'
+            />
+            <MobileScreen project={this.props.project} />
           </Col>
         </Row>
-        <Container className='d-block d-lg-none p-0'>
-            <RightButtons project={this.props.project} navProjects={this.props.navProjects} />
-            </Container>
+        <Container>
+          <RightButtons
+            project={this.props.project}
+            navProjects={this.props.navProjects}
+          />
+          <ProjectTeachnology project={this.props.project} />
+        </Container>
       </Container>
     )
   }

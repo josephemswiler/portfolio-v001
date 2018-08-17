@@ -15,8 +15,19 @@ export default class NavBottom extends Component {
       tooltipOpen: false,
       gitHubColor: '#ccc',
       linkedInColor: '#ccc',
-      emailColor: '#ccc'
+      emailColor: '#ccc',
+      width: window.innerWidth
     }
+  }
+
+  componentDidMount () {
+    window.addEventListener('resize', this.windowResize)
+  }
+
+  windowResize = () => {
+    this.setState({
+      width: window.innerWidth
+    })
   }
 
   tooltipToggle = () => {
@@ -77,9 +88,10 @@ export default class NavBottom extends Component {
     container: {
       position: 'fixed',
       zIndex: 2,
-      right: 0,
+      right: this.state.width < 768 || this.state.width > 1400 ? 0 : null,
       padding: 20,
-      bottom: 20
+      bottom: this.state.width > 767 ? 11 : null,
+      top: this.state.width > 767 ? null : 11
     },
     link: {
       margin: 15,

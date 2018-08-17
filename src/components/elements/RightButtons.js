@@ -18,11 +18,14 @@ export default class RightButtons extends Component {
     container: {
       margin: 0,
       padding: 0,
-      paddingTop: 20
+      paddingTop: 20,
+      maxWidth: '100%'
     },
     column: {
       textAlign: 'center',
-      padding: 0
+      padding: 0,
+      display: 'flex',
+      justifyContent: 'center'
     },
     button: {
       height: 50,
