@@ -8,15 +8,13 @@ import Home from './pages/Home'
 export default class App extends Component {
   render () {
     return (
-      <Router>
-        <div>
-          <NavTop />
-          <Switch>
-            <Route exact path='/' component={Home} />
-          </Switch>
-          <NavBottom />
-        </div>
-      </Router>
+      <div>
+        <NavTop />
+
+        <Home />
+
+        <NavBottom />
+      </div>
     )
   }
 }
