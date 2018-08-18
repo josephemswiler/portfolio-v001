@@ -33,7 +33,7 @@ export default class NavTop extends Component {
           <Link
             style={this.style().navbarBrand}
             className='navbar-brand'
-            to='/'
+            to='/portfolio-v001/'
           >
             Joseph<br />Emswiler
           </Link>
