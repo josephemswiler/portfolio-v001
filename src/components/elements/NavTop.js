@@ -30,9 +30,13 @@ export default class NavTop extends Component {
           className='transparent fixed-top'
           light
         >
- 
+          <Link
+            style={this.style().navbarBrand}
+            className='navbar-brand'
+            to='/'
+          >
             Joseph<br />Emswiler
-
+          </Link>
         </Navbar>
       </div>
     )
