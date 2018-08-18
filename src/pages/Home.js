@@ -94,17 +94,6 @@ export default class Home extends Component {
       top: 180,
       transform: 'rotate(120deg)'
     },
-    leafThree: {
-      display: this.state.projects[this.state.idx] === 'Jello'
-        ? 'block'
-        : 'none',
-      position: 'absolute',
-      height: 500,
-      zIndex: -1,
-      right: -10,
-      bottom: -300,
-      transform: 'rotate(-40deg)'
-    },
     container: {
       height: this.state.currentWindowHeight
         ? this.state.currentWindowHeight - 97
@@ -174,7 +163,6 @@ export default class Home extends Component {
 
           </Col>
         </Row>
-        <img style={this.style().leafThree} src={Leaf} alt='a tropical leaf' />
       </Container>
     )
   }
